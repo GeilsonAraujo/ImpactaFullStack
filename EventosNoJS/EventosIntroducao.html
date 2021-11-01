@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introdução a eventos</title>
+	<script>
+		//Principais eventos: onClick, ondbclick, onmouseup, onmouseover, onmouserout
+
+		//evento OnClick
+		function acao(){
+			alert('Evento Disparado');
+		}
+
+		function acao2(){
+			alert('O cursor do mouse deixou a regiao');
+		}
+
+		//Consultar mais eventos de Mouse no site wSchools.com
+
+	</script>
+</head>
+<body>
+	<div onclick="acao()" style="background: #ccc; height: 100px; width: 200px">OnClick </div> <br>
+
+	<div ondblclick ="acao()" style="background: #ccc; height: 100px; width: 200px">ondbClck</div> <br>
+
+	<div onmouseover ="acao()" style="background: #ccc; height: 100px; width: 200px">onmouseover</div> <br>
+
+	<div onmouseup= "acao()" style="background: #ccc; height: 100px; width: 200px">onmouseup</div> <br>
+
+	<div onmouseout = "acao()" style="background: #ccc; height: 100px; width: 200px">onmouseout</div> <br>
+
+	<div onclick="acao()" onmouseout = "acao2()"  style="background: #ccc; height: 100px; width: 200px">Eventos Encadeados</div> <br>
+</body>
+</html>

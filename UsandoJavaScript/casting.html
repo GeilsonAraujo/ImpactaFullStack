@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Casting</title>
+    <script>
+        
+        var variavel1 = prompt('Digite um numero');
+        var variavel2 = prompt('Digite outro numero');
+
+        var num1 = prompt('Digite um numero fracionado');
+        var num2 = prompt('Digite outro numero fracionado');
+
+
+        //Operação de casting pois o dado recebido no prompt vem como string
+        variavel1 = parseInt(variavel1);
+        variavel2 = parseInt(variavel2);
+        
+        //Converte para ponto flutuante
+        num2 = parseFloat(num2);
+        num1 = parseFloat(num1);
+
+        document.write(variavel1 + variavel2);
+        document.write(num1+num2);
+
+
+    </script>
+</head>
+<body>
+    Resultado da soma
+</body>
+</html>

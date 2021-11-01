@@ -1,0 +1,10 @@
+.links-menu{
+	color: red;
+	display: flex;
+}
+
+.links-menu li{
+	padding: 1px 5px;
+	margin: 10px;
+	width: 33.34%;
+}

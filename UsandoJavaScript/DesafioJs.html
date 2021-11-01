@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Desafio JavaScript</title>
+	<script>
+		var a = 10;
+		var b = 20;
+		var c = null;
+	</script>
+</head>
+<body>
+	<h1>Observe</h1>
+	<h3> As variveis possuem os seguintes valores</h3>
+	<script>
+		document.write("<h4>Variavel A = " +a+ "</h4>");
+		document.write("<h4>Variavel B = " +b+ "</h4>");
+		document.write("<h4>Variavel C = " +c+ "</h4>");
+
+		document.write("<hr>");
+		c = a;
+		a = b;
+		b = c;
+		c = null
+
+		document.write("<h4>Após a magica que você não percebeu... Tchan Tchan tchan tchan </h4>");
+
+
+		document.write("<h4>Variavel A = " +a+ "</h4>");
+		document.write("<h4>Variavel B = " +b+ "</h4>");
+		document.write("<h4>Variavel C = " +c+ "</h4>");
+	</script>
+</body>
+</html>

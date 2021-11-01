@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipualçao dos Inputs</title>
+	<script>
+		
+		function distribuiCaractere(){
+			//selecionar o valor digitado
+			var caracter = document.getElementById('entrada').value
+
+			//limpar campo digitado pelo usuario
+
+			document.getElementById('entrada').value = ''
+
+			console.log(caracter);
+
+			//Limpar espaços em brancos
+			caracter.trim();
+			
+			switch(caracter){
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+				case '4':
+				case '5':
+					//adicionar o caracter no campo numero.
+					document.getElementById('apenas_numeros').value += caracter;
+					break;
+				default:
+					//Adcinar o caractere no campo letras
+					document.getElementById('apenas_letras').value += caracter;
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<input
+
+	type="text" 
+	placeholder="Digite um caractere aqui" 
+	onkeyup="distribuiCaractere()"
+	id="entrada"
+	>
+	
+	<hr/>
+
+	<span>Letras:</span>
+	<input type="text" disabled="disabled" id="apenas_letras">
+	<br><br>
+
+	<span>Numeros:</span>
+	<input type="text" disabled="disabled" id="apenas_numeros">
+
+
+</body>
+</html>
