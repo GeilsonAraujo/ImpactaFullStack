@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pilares da POO</title>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+
+<script type="text/babel"> 
+		
+	class ContaBancaria{
+		//agencia
+		//numConta
+		//saldo
+		//limite		
+
+		constructor(){
+			this.agencia = 1075;
+			this.numConta = 75345;
+			this.saldo = 1300;
+			this.limite = 1650;
+		}
+
+		depositar(valorDeposito){
+			this.saldo += valorDeposito;
+		}
+
+		sacar(valorSacado){
+			this.saldo -= valorSacado;
+		}
+
+		consultarSaldo(){
+			return this.saldo;
+		}
+	}
+
+	let x = new ContaBancaria();
+	let y = new ContaBancaria();
+
+	console.log(x.consultarSaldo());
+	x.depositar(100);
+	console.log(x.consultarSaldo());
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+Paradigma de Orientação a Objetos
+	Estrutura dados com comportamentos
+
+Paradigma Procedural
+
+Pilares da POO
+
+	Abstração
+	Encapsulamento
+	Herança
+	Polimorfismo
+
+Abstração:
+	Compreender as coisas do mundo real e trazer essas coisas para dentro do nosso ecossistema.
+
+	Entidada, Identidade, Caracteristicas e Acoes.
