@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Herenca em JS</title>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+<script type="text/babel"> 
+
+//operador super() fornece ascesso ao construtor da class Pai.
+class Animal {
+	constructor(){
+		this.cor = '';
+		this.tamanho = null;
+	}
+	dormir(){
+			console.log('dormiu o Animal');
+		}
+}
+
+	class Passaro extends Animal{
+		constructor(){
+			super();
+			this.bico = '';
+		}
+
+		voar(){
+			console.log('Voou')
+		}
+	}
+
+	class Cachorro extends Animal{
+		constructor(){
+			super();
+			this.orelhas = 'Grandes e caidas';
+		}
+		correr(){
+			console.log('correu');
+		}
+
+		rosnar(){
+			console.log('rrras');
+		}
+
+	}
+
+	class Pardal extends Passaro{
+
+		constructor(){
+			super();
+		}		
+	}
+
+	class Papagaio extends Passaro{
+		constructor(){
+			super();
+			this.sabeFalar = true;
+		}
+	} 
+	let cachorro = new Cachorro();
+	let pardal = new Pardal();
+	let animal = new Animal();
+	let papagaio = new Papagaio();
+	let passaro = new Passaro();
+ 
+ 	console.log(animal);
+	console.log(cachorro);
+	console.log(passaro);
+	console.log(pardal);
+	console.log(papagaio);
+	
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow function</title>
+
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+<script type="text/babel"> 
+
+	let quadrado = (x) => {
+		return x * x;
+	}
+
+	let parOuImpar = function(numero) {
+		if((numero % 2) === 0) {
+			return 'par'
+		} else {
+			return 'impar'
+		}
+	}
+
+	let parOuImpar2 = numero => {		
+		if((numero % 2) === 0) {
+			return 'par'
+		} else {
+			return 'impar'
+		}
+	}
+
+	let parOuImparTernario = numero => numero % 2 === 0 ? 'par' : 'impar' ;
+
+
+
+	document.write(parOuImparTernario(7))
+
+	document.write(parOuImpar2(10))
+	
+
+	
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

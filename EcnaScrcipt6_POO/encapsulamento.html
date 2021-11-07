@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Topicos de Encapsulamento</title>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+<script type="text/babel"> 
+
+//Metodo sem encpisulamento
+	class Tv {
+		constructor(){
+			this.relacaoCanais = Array(2, 4, 5, 7, 10);
+			this.canalAtivo = 5;
+			this.volume = 5;
+		}
+	}
+	let tv = new Tv();
+	console.log(tv.canalAtivo + ' Sem encapsulamento');
+
+//metodo com encapsulamento
+	class Tv2 {
+		constructor(){
+			console.log('O constructor sempre é chamado primeiro');
+			this._relacaoCanais = Array(2, 4, 5, 7, 10);
+			this._canalAtivo = 7;
+			this._volume = 8;
+		}
+
+		get canalAtivo(){ //recupera os valores
+			return this._canalAtivo;
+		}
+
+		set canalAtivo(canal){ //atualiza os valores
+			let x = this._relacaoCanais.indexOf(canal);
+			console.log(x);
+			if (x !== -1) {
+				this._canalAtivo = canal;
+				console.log('Canal atualizado com sucesso')	
+			}else{
+				console.log('Canal nao Existe')
+			}			
+		}
+	}
+
+	let tv2 = new Tv2();
+	tv2.canalAtivo = 4;
+	console.log(tv2._canalAtivo);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
