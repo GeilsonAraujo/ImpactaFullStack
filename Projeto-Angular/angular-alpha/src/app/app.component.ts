@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-alpha';
+  title = 'Projeto do Geilson:';
+  //Aqui vai ser nossos codigos
+  // Aqui vamos criar as propriedades cujo os valores seram enviados para secundario.component.ts
+  
+  //ate aqui
 }
