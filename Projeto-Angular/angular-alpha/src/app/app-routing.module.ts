@@ -6,12 +6,15 @@ import { PropertyBindingComponent } from './component/property-binding/property-
 import { EventBindingComponent } from './component/event-binding/event-binding.component';
 import { TwoWayComponent } from './component/two-way/two-way.component';
 import { MegaSaltoComponent } from './component/mega-salto/mega-salto.component';
+import { NgIfComponent } from './component/ng-if/ng-if.component';
+
 const routes: Routes = [
   {path: 'interpolation', component: InterpolationComponent},
   {path: 'propbinding', component: PropertyBindingComponent},
   {path: 'evento', component: EventBindingComponent},
   {path:'twoway', component: TwoWayComponent},
-  {path: 'mega-salto', component: MegaSaltoComponent }
+  {path: 'mega-salto', component: MegaSaltoComponent },
+  {path: 'ng-if', component: NgIfComponent }
 ]; //centralizador de recursos
 
 @NgModule({

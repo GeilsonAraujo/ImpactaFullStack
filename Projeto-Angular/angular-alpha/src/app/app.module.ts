@@ -10,6 +10,8 @@ import { EventBindingComponent } from './component/event-binding/event-binding.c
 import { TwoWayComponent } from './component/two-way/two-way.component';
 import { SecundarioComponent } from './component/secundario/secundario.component';
 import { MegaSaltoComponent } from './component/mega-salto/mega-salto.component';
+import { OutputComponent } from './component/output/output.component';
+import { NgIfComponent } from './component/ng-if/ng-if.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MegaSaltoComponent } from './component/mega-salto/mega-salto.component'
     EventBindingComponent,
     TwoWayComponent,
     SecundarioComponent,
-    MegaSaltoComponent
+    MegaSaltoComponent,
+    OutputComponent,
+    NgIfComponent
   ],
   imports: [
     BrowserModule,

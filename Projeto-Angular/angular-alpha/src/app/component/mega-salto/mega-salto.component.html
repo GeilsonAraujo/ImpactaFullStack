@@ -1,3 +1,5 @@
 <div class="content">
-    <app-secundario [mensagem] = "outroTexto" [alerta] = "texto"></app-secundario>
+    <!-- <app-secundario [mensagem] = "outroTexto" [alerta] = "texto"></app-secundario> -->
+
+    <app-output (anunciador) = "exibirDados($event)"> </app-output>
 </div>

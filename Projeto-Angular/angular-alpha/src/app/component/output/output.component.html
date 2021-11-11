@@ -1,0 +1,19 @@
+<!-- Aqui, vamos implementar a estrutura da view para capturarmos os
+dados que serão enviados para o component-pai.
+Antes de ser enviado para o compoente-pai, os dados serão vinculados ao
+aquivo output.component.ts para que a estrutura lógica cumpra seu 
+papel-->
+
+<div class="content">
+    <h2>Implementação Output Property</h2>
+    <br /> <br />
+
+    <p>Seu nome completo: </p> <input type="text" [(ngModel)]="objDados.nome">
+    <br/>
+    
+    Informe seu email: <input type="email" [(ngModel)]="objDados.email">
+    <br/>
+    <div class="box">
+    <input type="button" value="Enviar" (click)="enviarDados()"/>
+    </div>
+</div>
