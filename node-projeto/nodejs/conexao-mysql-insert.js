@@ -15,14 +15,14 @@ function callback(erro){
         console.error(erro);
     }else{
         console.info("Sucesso ao conectar!");
-        var sql = "UPDATE QUIZ_PESSOA SET nome = 'GG' WHERE id = 41";
 
-        conexao.query(sql, function(erro, resultado){
-            if(erro){
+        var sql = "INSERT INTO QUIZ_PESSOA VALUES (null, 'Maria da Penha2', NOW(), null, null)";
+        conexao.query(sql, function (erro, resultado) {
+            if (erro) { 
                 console.error(erro);
             }else{
                 console.log(resultado);
-            }         
+            }
         });
     }
 }

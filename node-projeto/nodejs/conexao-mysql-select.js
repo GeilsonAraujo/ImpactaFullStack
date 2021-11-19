@@ -15,14 +15,15 @@ function callback(erro){
         console.error(erro);
     }else{
         console.info("Sucesso ao conectar!");
-        var sql = "select * from QUIZ_PESSOA;";
 
-        conexao.query(sql, function(erro, resultado){
-            if(erro){
+        var sql = "select * from QUIZ_PESSOA WHERE nome = 'Maria da Penha'";
+        conexao.query(sql, function (erro, resultado) {
+            if (erro) { 
                 console.error(erro);
             }else{
                 console.log(resultado);
-            }         
+            }
         });
+        
     }
 }
