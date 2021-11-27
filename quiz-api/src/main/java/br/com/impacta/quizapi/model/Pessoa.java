@@ -1,40 +1,16 @@
 package br.com.impacta.quizapi.model;
 
-import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Pessoa {
-	
+
+	@Id @GeneratedValue
+	private int id;
 	private String nome;
 	private int idade;
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(idade, nome);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		return idade == other.idade && Objects.equals(nome, other.nome);
-	}
-
-
-	
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-
 
 	public String getNome() {
 		return nome;
@@ -44,10 +20,20 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	@Override
-	public String toString() {
-		return "Pessoa [nome=" + nome + ", idade=" + idade + "]";
+	public int getIdade() {
+		return idade;
 	}
-	
-	
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }
