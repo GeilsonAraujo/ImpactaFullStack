@@ -1,6 +1,7 @@
+<div class="teste">
 <h2>Perguntas</h2>
   <p>Aqui vamos gerenciar a entidade pergunta:</p>
-  <button mat-raised-button color="primary" (click)="novaPergunta()">Nova pergunta</button>
+  <button mat-raised-button color="primary" (click)="novaPergunta()" class="n">Nova pergunta</button>
 
   <br/>
   <br/>
@@ -58,4 +59,5 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumnsPergunta"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumnsPergunta;"></tr>
-  </table>  
+  </table>
+  </div>
