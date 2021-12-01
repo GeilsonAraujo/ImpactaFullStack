@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Pergunta } from './model/pergunta';
 import { Pessoa } from './model/pessoa';
+import { PerguntaService } from './service/pergunta.service';
 import { PessoaService } from './service/pessoa.service';
 
 @Component({
@@ -10,16 +12,22 @@ import { PessoaService } from './service/pessoa.service';
 })
 export class AppComponent {
   displayedColumns: string[] = ['id', 'nome', 'acoes'];
+  displayedColumnsPergunta: string[] = ['titulo', 'acoes'];
   dataSource;
+  dataSourcePergunta;
   mostrarFormulario = false;
+  mostrarFormularioPergunta = false;
   pessoa: Pessoa = new Pessoa();
+  pergunta: Pergunta = new Pergunta();
 
-  constructor(private service: PessoaService){
+  constructor(private service: PessoaService, private servicePergunta: PerguntaService){
   }
 
   ngOnInit(): void {
     this.findAll();
+    this.findAllPergunta(); 
   }
+
 
   editar(element) {
     this.mostrarFormulario = true;
@@ -79,6 +87,74 @@ export class AppComponent {
       (response) => {
         // alert('sucesso!');
         this.dataSource = new MatTableDataSource <Pessoa> (response);
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+/*  ------ METODOS DE PERGUNTA ---- */
+
+  editarPergunta(element) {
+    this.mostrarFormularioPergunta = true;
+    this.pergunta = element;
+  }
+
+  salvarPergunta(){
+    if(this.pergunta.idPublico){
+      this.atualizarPerguntaNoBanco();
+    }else{
+      this.criarPerguntaNoBanco();
+    }
+  }
+
+  atualizarPerguntaNoBanco(){
+    this.servicePergunta.update(this.pergunta).subscribe( 
+      (response) => {
+        this.findAllPergunta();
+        this.mostrarFormulario = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  criarPerguntaNoBanco(){
+    this.servicePergunta.create(this.pergunta).subscribe( 
+      (response) => {
+        this.findAllPergunta();
+        this.mostrarFormulario = false;
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  novaPergunta(){
+    this.mostrarFormularioPergunta = true;
+    this.pergunta = new Pergunta();
+  }
+
+  deletePergunta(id) {
+    this.servicePergunta.delete(id).subscribe( 
+      (response) => {
+        this.findAllPergunta();
+      },
+      (response) => {
+        alert("Erro!");
+      }
+    );
+  }
+
+  findAllPergunta() {
+    this.servicePergunta.findAll().subscribe( 
+      (response) => {
+        // alert('sucesso!');
+        // var perguntas = response._embedded;
+        this.dataSourcePergunta = new MatTableDataSource <Pergunta> (response._embedded.pergunta);
+        console.info(response);
       },
       (response) => {
         alert("Erro!");
