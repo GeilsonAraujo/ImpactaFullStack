@@ -16,7 +16,7 @@ export class PerguntaService {
   }
 
   update(pergunta: Pergunta){
-    return this.http.put<Pergunta[]>(this.URL_API + '/pergunta/' + pergunta.idPublico, pergunta);
+    return this.http.put<Pergunta[]>(this.URL_API + '/pergunta/' + pergunta.id, pergunta);
   }
 
   findAll(){

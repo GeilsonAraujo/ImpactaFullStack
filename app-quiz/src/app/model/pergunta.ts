@@ -5,5 +5,5 @@ export class Pergunta {
     resposta2;
     resposta3;
     respostaCorreta;
-    idPublico;
+  
 }
