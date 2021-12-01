@@ -3,6 +3,9 @@ package br.com.impacta.quizapi.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Pessoa {
@@ -11,6 +14,10 @@ public class Pessoa {
 	private int id;
 	private String nome;
 	private int idade;
+	
+	@JsonBackReference
+	@OneToOne(mappedBy = "pessoa")
+	private Historico historico;
 
 	public String getNome() {
 		return nome;
