@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" isELIgnored = "false" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
 <form name="cadastro" action="ClienteController" method="post">
 	<label>Nome:</label><input type="text" name="nome"><br><br>
 	
-	<label>EndereÃ§o:</label><input type="text" name="endereco"><br><br>
+	<label>Endereço:</label><input type="text" name="endereco"><br><br>
 	
 	<label>Telefone</label><input type="text" name="fone"><br>
 	<input type="hidden" name="app" value="addCliente"><br>

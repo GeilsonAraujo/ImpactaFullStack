@@ -1,7 +1,8 @@
 package controllers;
 
-import java.beans.Beans;
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,32 +14,40 @@ import utils.BeansUtilities;
 
 public class ClienteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private ClienteDao clientedao;
+	String forward;
        
     public ClienteController() {
         super();
-        // TODO Auto-generated constructor stub
+        clientedao = new ClienteDao();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String app = request.getParameter("app");
 		System.out.println(app);
 		
-		if (app == null) {
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+		if ((app == null) || (app.equalsIgnoreCase("listarCliente"))) {
+			forward = "views/listar.jsp";
+			request.setAttribute("clientes", clientedao.getAllClientes());
 			
 		}else if (app.equalsIgnoreCase("cadastro")) {
-			request.getRequestDispatcher("views/cadastro.jsp").forward(request, response);
+			forward = "views/cadastro.jsp";
 			
-		}else if (app.equalsIgnoreCase("addCliente")) {
-			Cliente cliente = new Cliente();
-			
-			BeansUtilities.populateBean(cliente, request);
-			
-			ClienteDao clientedao = new ClienteDao();
-			clientedao.addCliente(cliente);
-			request.getRequestDispatcher("views/cadastro.jsp");
-			 
+		}else if(app.equalsIgnoreCase("excluir")){
+			forward = "views/listar.jsp";
+			int id = Integer.parseInt(request.getParameter("clienteId"));
+			clientedao.deleteCliente(id);
+			request.setAttribute("clientes", clientedao.getAllClientes());
+		
+		}else if(app.equalsIgnoreCase("update")){
+			forward = "views/cadastro.jsp";
+			int id = Integer.parseInt(request.getParameter("clienteId"));
+			request.setAttribute("cliente", clientedao.getClienteById(id));
+			System.out.println("ID do cliente para atualizar: " + id);
 		}
+		
+		RequestDispatcher view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
 			
 	}
 

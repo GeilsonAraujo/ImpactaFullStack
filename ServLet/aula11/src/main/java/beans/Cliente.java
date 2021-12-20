@@ -1,10 +1,18 @@
 package beans;
 
 public class Cliente {
+	private int id;
 	private String nome;
 	private String endereco;
 	private String fone;
-	//necessitam ser iguais ao do formulario de cadastro
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}

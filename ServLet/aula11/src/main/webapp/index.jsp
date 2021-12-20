@@ -8,7 +8,7 @@
 <title>Projeto MVC</title>
 </head>
 <body>
-<div>Projeto com MVC</div>
-<a href="ClienteController?app=cadastro">Cadastrar Cliente </a>
+<div>Sistema de cadastro de cliente</div>
+<a href="ClienteController?app=listarCliente">Sistema Clientes</a>
 </body>
 </html>
